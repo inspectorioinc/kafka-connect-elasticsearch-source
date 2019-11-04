@@ -1,0 +1,9 @@
+com/github/dariobalinzo/schema/StructConverter.class
+com/github/dariobalinzo/task/ElasticSourceTask.class
+com/github/dariobalinzo/schema/SchemaConverter.class
+com/github/dariobalinzo/ElasticSourceConnectorConfig.class
+com/github/dariobalinzo/utils/Version.class
+com/github/dariobalinzo/utils/Utils.class
+com/github/dariobalinzo/ElasticSourceConnector.class
+com/github/dariobalinzo/task/ElasticSourceTaskConfig.class
+com/github/dariobalinzo/utils/ElasticConnection.class

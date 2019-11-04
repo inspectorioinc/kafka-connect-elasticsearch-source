@@ -1,0 +1,9 @@
+/Users/abc/inspectorio/kafka-connect-elasticsearch-source/src/main/java/com/github/dariobalinzo/schema/SchemaConverter.java
+/Users/abc/inspectorio/kafka-connect-elasticsearch-source/src/main/java/com/github/dariobalinzo/task/ElasticSourceTask.java
+/Users/abc/inspectorio/kafka-connect-elasticsearch-source/src/main/java/com/github/dariobalinzo/ElasticSourceConnectorConfig.java
+/Users/abc/inspectorio/kafka-connect-elasticsearch-source/src/main/java/com/github/dariobalinzo/utils/ElasticConnection.java
+/Users/abc/inspectorio/kafka-connect-elasticsearch-source/src/main/java/com/github/dariobalinzo/utils/Utils.java
+/Users/abc/inspectorio/kafka-connect-elasticsearch-source/src/main/java/com/github/dariobalinzo/utils/Version.java
+/Users/abc/inspectorio/kafka-connect-elasticsearch-source/src/main/java/com/github/dariobalinzo/schema/StructConverter.java
+/Users/abc/inspectorio/kafka-connect-elasticsearch-source/src/main/java/com/github/dariobalinzo/ElasticSourceConnector.java
+/Users/abc/inspectorio/kafka-connect-elasticsearch-source/src/main/java/com/github/dariobalinzo/task/ElasticSourceTaskConfig.java
