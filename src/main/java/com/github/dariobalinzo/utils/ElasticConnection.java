@@ -39,7 +39,7 @@ public class ElasticConnection {
 
     public ElasticConnection(String host, int port, String protocol, int maxConnectionAttempts,
                              long connectionRetryBackoff) {
-        System.out.println("elastic auth disabled");
+        logger.info("elastic auth disabled");
 
         //TODO add configuration for https also, and many nodes instead of only one
         client = new RestHighLevelClient(

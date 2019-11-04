@@ -145,13 +145,12 @@ public class ElasticSourceConnectorConfig extends AbstractConfig {
                 ES_SCHEME_CONF,
                 Type.STRING,
                 ES_SCHEME_DEFAULT,
-                Importance.HIGH,
+                Importance.MEDIUM,
                 ES_SCHEME_DOC,
                 DATABASE_GROUP,
                 ++orderInGroup,
                 Width.LONG,
-                ES_SCHEME_DISPLAY,
-                Collections.singletonList(INDEX_PREFIX_CONFIG)
+                ES_SCHEME_DISPLAY
         ).define(
                 ES_HOST_CONF,
                 Type.STRING,
