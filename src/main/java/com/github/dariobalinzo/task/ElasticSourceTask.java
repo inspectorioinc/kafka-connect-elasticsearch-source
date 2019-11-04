@@ -105,6 +105,7 @@ public class ElasticSourceTask extends SourceTask {
 
     private void initEsConnection() {
 
+        final String esScheme = config.getString(ElasticSourceConnectorConfig.ES_SCHEME_CONF);
         final String esHost = config.getString(ElasticSourceConnectorConfig.ES_HOST_CONF);
         final int esPort = Integer.parseInt(config.getString(ElasticSourceConnectorConfig.ES_PORT_CONF));
 
@@ -122,6 +123,7 @@ public class ElasticSourceTask extends SourceTask {
             es = new ElasticConnection(
                     esHost,
                     esPort,
+                    esScheme,
                     maxConnectionAttempts,
                     connectionRetryBackoff
             );
@@ -129,6 +131,7 @@ public class ElasticSourceTask extends SourceTask {
             es = new ElasticConnection(
                     esHost,
                     esPort,
+                    esScheme,
                     esUser,
                     esPwd,
                     maxConnectionAttempts,
@@ -369,12 +372,14 @@ public class ElasticSourceTask extends SourceTask {
 
         final String esHost = "localhost";
         final int esPort = 9200;
+        final String scheme = "http";
 
         maxConnectionAttempts = 3;
         connectionRetryBackoff = 1000;
         es = new ElasticConnection(
                 esHost,
                 esPort,
+                scheme,
                 maxConnectionAttempts,
                 connectionRetryBackoff
         );

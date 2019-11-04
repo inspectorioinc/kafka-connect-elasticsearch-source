@@ -28,10 +28,14 @@ import java.util.Map;
 public class ElasticSourceConnectorConfig extends AbstractConfig {
 
     //TODO add the possibility to specify multiple hosts
+    public final static String ES_SCHEME_CONF = "es.scheme";
+    private final static String ES_SCHEME_DOC = "Elasticsearch scheme (default: http)";
+    private final static String ES_SCHEME_DISPLAY = "Elasticsearch scheme";
+    private static final String ES_SCHEME_DEFAULT = "http";
+
     public final static String ES_HOST_CONF = "es.host";
     private final static String ES_HOST_DOC = "ElasticSearch host";
     private final static String ES_HOST_DISPLAY = "Elastic host";
-
 
     public final static String ES_PORT_CONF = "es.port";
     private final static String ES_PORT_DOC = "ElasticSearch port";
@@ -138,6 +142,17 @@ public class ElasticSourceConnectorConfig extends AbstractConfig {
     private static void addDatabaseOptions(ConfigDef config) {
         int orderInGroup = 0;
         config.define(
+                ES_SCHEME_CONF,
+                Type.STRING,
+                ES_SCHEME_DEFAULT,
+                Importance.HIGH,
+                ES_SCHEME_DOC,
+                DATABASE_GROUP,
+                ++orderInGroup,
+                Width.LONG,
+                ES_SCHEME_DISPLAY,
+                Collections.singletonList(INDEX_PREFIX_CONFIG)
+        ).define(
                 ES_HOST_CONF,
                 Type.STRING,
                 Importance.HIGH,

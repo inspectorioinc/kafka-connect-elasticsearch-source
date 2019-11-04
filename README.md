@@ -51,6 +51,13 @@ curl localhost:8083/connectors/elastic-source/status | jq
   * Importance: high
   * Dependents: ``index.prefix``
 
+``es.scheme``
+  ElasticSearch scheme
+
+  * Type: string
+  * Importance: high
+  * Default: ``http``
+  
 ``es.user``
   Elasticsearch username
 
