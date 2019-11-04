@@ -42,7 +42,7 @@ public class TestSchema extends TestCase {
     private ElasticConnection es;
 
     public void setUp() throws Exception {
-        es = new ElasticConnection("localhost", 9200, 10, 100);
+        es = new ElasticConnection("localhost", 9200, "http", 10, 100);
     }
 
     public void testGetIndexAlias() throws Exception {

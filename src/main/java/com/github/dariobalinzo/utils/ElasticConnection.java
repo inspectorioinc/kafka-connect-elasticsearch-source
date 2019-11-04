@@ -28,6 +28,7 @@ import org.slf4j.LoggerFactory;
 
 import java.io.IOException;
 
+
 public class ElasticConnection {
 
     public final static Logger logger = LoggerFactory.getLogger(ElasticConnection.class);
@@ -36,21 +37,21 @@ public class ElasticConnection {
     private final long connectionRetryBackoff;
     private final int maxConnectionAttempts;
 
-    public ElasticConnection(String host, int port, int maxConnectionAttempts,
+    public ElasticConnection(String host, int port, String protocol, int maxConnectionAttempts,
                              long connectionRetryBackoff) {
         logger.info("elastic auth disabled");
 
         //TODO add configuration for https also, and many nodes instead of only one
         client = new RestHighLevelClient(
                 RestClient.builder(
-                        new HttpHost(host, port)));
+                        new HttpHost(host, port, protocol)));
 
         this.maxConnectionAttempts = maxConnectionAttempts;
         this.connectionRetryBackoff = connectionRetryBackoff;
 
     }
 
-    public ElasticConnection(String host, int port, String user, String pwd,
+    public ElasticConnection(String host, int port, String protocol, String user, String pwd,
                              int maxConnectionAttempts, long connectionRetryBackoff) {
 
         logger.info("elastic auth enabled");
@@ -59,10 +60,10 @@ public class ElasticConnection {
         credentialsProvider.setCredentials(AuthScope.ANY,
                 new UsernamePasswordCredentials(user, pwd));
 
-        //TODO add configuration for https also, and many nodes instead of only one
+        //TODO add configuration for many nodes instead of only one
         client = new RestHighLevelClient(
                 RestClient.builder(
-                        new HttpHost(host, port)).setHttpClientConfigCallback(
+                        new HttpHost(host, port, protocol)).setHttpClientConfigCallback(
                         httpClientBuilder -> httpClientBuilder.setDefaultCredentialsProvider(credentialsProvider)
                 )
         );

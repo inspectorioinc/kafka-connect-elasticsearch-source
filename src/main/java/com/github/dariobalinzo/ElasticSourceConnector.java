@@ -59,6 +59,7 @@ public class ElasticSourceConnector extends SourceConnector {
                     + "error", e);
         }
 
+        final String esScheme = config.getString(ElasticSourceConnectorConfig.ES_SCHEME_CONF);
         final String esHost = config.getString(ElasticSourceConnectorConfig.ES_HOST_CONF);
 
         //using rest config all the parameters are strings
@@ -77,6 +78,7 @@ public class ElasticSourceConnector extends SourceConnector {
             elasticConnection = new ElasticConnection(
                     esHost,
                     esPort,
+                    esScheme,
                     maxConnectionAttempts,
                     connectionRetryBackoff
             );
@@ -84,6 +86,7 @@ public class ElasticSourceConnector extends SourceConnector {
             elasticConnection = new ElasticConnection(
                     esHost,
                     esPort,
+                    esScheme,
                     esUser,
                     esPwd,
                     maxConnectionAttempts,

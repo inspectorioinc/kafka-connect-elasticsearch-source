@@ -3,8 +3,8 @@ Kafka Connect Elasticsearch Source: fetch data from elasting indices using scrol
  It supports dynamic schema and nested objects/ arrays.
 
 ## Installation:
-
-  Download (https://github.com/inspectorioinc/kafka-connect-elasticsearch-source/raw/master/target/elastic-source-connect-0.4-jar-with-dependencies.jar) the jar and put into the connect classpath (e.g ``/usr/share/java/kafka-connect-elasticsearch`` ) or set ``plugin.path`` parameter appropriately.
+1. ``mvn clean package -DskipTests``
+2. Copy (`target/elastic-source-connect-0.4-jar-with-dependencies.jar`) the jar and put into the connect classpath (e.g ``/usr/share/java/kafka-connect-elasticsearch`` ) or set ``plugin.path`` parameter appropriately.
 
 ## Example
 Using kafka connect in distributed way, a sample config file to fetch ``metric*`` indices and to produce output topics with ``es_`` prefix:
@@ -51,6 +51,13 @@ curl localhost:8083/connectors/elastic-source/status | jq
   * Importance: high
   * Dependents: ``index.prefix``
 
+``es.scheme``
+  ElasticSearch scheme
+
+  * Type: string
+  * Importance: medium
+  * Default: ``http``
+  
 ``es.user``
   Elasticsearch username
 
